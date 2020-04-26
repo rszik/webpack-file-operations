@@ -1,0 +1,53 @@
+{
+  "name": "webpack-file-operations",
+  "description": "File and directory operation collection for webpack build. You can attach any of these operations (delete, create, modify, merge json, etc...) to any webpack hook with webpack-hook-attacher-plugin",
+  "version": "1.0.0",
+  "author": {
+    "name": "Roland Szikora",
+    "email": "roland.szikora@wecdev.com",
+    "url": "https://wecdev.com"
+  },
+  "bugs": {
+    "url": "https://github.com/rszik/webpack-file-operations/issues"
+  },
+  "homepage": "https://github.com/rszik/webpack-file-operations#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rszik/webpack-file-operations.git"
+  },
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/rolandszik"
+  },
+  "keywords": [
+    "webpack",
+    "hook",
+    "attach",
+    "delete",
+    "create",
+    "modify",
+    "zip",
+    "merge json"
+  ],
+  "license": "MIT",
+  "private": false,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "publish": "npm publish --access public"
+  },
+  "deprecated": false,
+  "devDependencies": {
+    "@types/fs-extra": "8.1.0",
+    "@types/node": "13.11.1",
+    "@types/glob": "7.1.1",
+    "typescript": "3.8.3"
+  },
+  "dependencies": {
+    "fs-extra": "8.1.0",
+    "glob": "7.1.1",
+    "zip-local": "0.3.4",
+    "webpack-hook-attacher-plugin": "1.0.1"
+  }
+}
