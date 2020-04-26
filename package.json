@@ -34,8 +34,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w",
-    "publish": "npm publish --access public"
+    "watch": "tsc -w"
   },
   "deprecated": false,
   "devDependencies": {
@@ -48,6 +47,6 @@
     "fs-extra": "8.1.0",
     "glob": "7.1.1",
     "zip-local": "0.3.4",
-    "webpack-hook-attacher-plugin": "1.0.1"
+    "webpack-hook-attacher-plugin": "1.0.2"
   }
 }
