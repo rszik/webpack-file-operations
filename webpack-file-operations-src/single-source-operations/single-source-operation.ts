@@ -35,12 +35,15 @@ export abstract class SingleSourceOperation extends Operation {
                 singleSource = FileUtils.replaceHash(singleSource, this.compilerHookParameters.compilation);
             }
 
-            if (!fsExtra.existsSync(singleSource)) {
+            let sourceExists: boolean = fsExtra.existsSync(singleSource);
+            if (!sourceExists) {
                 if (this.params.throwErrorIfSourceDoesNotExists) {
                     throw new Error(`Source doesn't exists`);
                 }
             }
-            func(singleSource);
+            if (sourceExists) {
+                func(singleSource);
+            }
         });
     }
 

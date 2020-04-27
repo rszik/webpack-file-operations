@@ -32,12 +32,15 @@ class SingleSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
             if (this.params.replaceHash) {
                 singleSource = classes_1.FileUtils.replaceHash(singleSource, this.compilerHookParameters.compilation);
             }
-            if (!fsExtra.existsSync(singleSource)) {
+            let sourceExists = fsExtra.existsSync(singleSource);
+            if (!sourceExists) {
                 if (this.params.throwErrorIfSourceDoesNotExists) {
                     throw new Error(`Source doesn't exists`);
                 }
             }
-            func(singleSource);
+            if (sourceExists) {
+                func(singleSource);
+            }
         });
     }
     checkCantBeGlobPattern(singleSource) {
