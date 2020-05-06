@@ -33,6 +33,7 @@ class GlobSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
         super.setParams(params);
         this.params = params;
         this.setFullSourceGlobPatterns();
+        webpack_hook_attacher_plugin_1.ConsoleLogger.consoleDebug(`this.sourceRoots after setFullSourceGlobPatterns: ${webpack_hook_attacher_plugin_1.Utils.formattedJSONStringify(this.sourceRoots)}`);
     }
     runGlobSourceOperation(funcionToRun, executeFuncionToRunOnSourcesFromGlobOneByOne = true) {
         super.runWrapper(this, () => {
@@ -61,7 +62,7 @@ class GlobSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
                 }
             }
             else {
-                webpack_hook_attacher_plugin_1.ConsoleLogger.consoleDebug(`sourceFromGlobs: ${sourcesFromGlob}`);
+                webpack_hook_attacher_plugin_1.ConsoleLogger.consoleDebug(`sourceFromGlobs: ${webpack_hook_attacher_plugin_1.Utils.formattedJSONStringify(sourcesFromGlob)}`);
             }
             if (executeFuncionToRunOnSourcesFromGlobOneByOne) {
                 sourcesFromGlob.forEach((sourceFromGlob) => {

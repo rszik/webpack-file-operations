@@ -8,6 +8,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fsExtra = __importStar(require("fs-extra"));
+const path = __importStar(require("path"));
 const glob_source_operation_1 = require("./glob-source-operation");
 const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
 const classes_1 = require("../classes");
@@ -15,6 +16,7 @@ class CopyMultipleFilesParameter extends glob_source_operation_1.GlobSourceOpera
     constructor() {
         super(...arguments);
         this.destinationDir = null;
+        this.keepFolderStructure = true;
     }
 }
 exports.CopyMultipleFilesParameter = CopyMultipleFilesParameter;
@@ -30,7 +32,14 @@ class CopyMultipleFiles extends glob_source_operation_1.GlobSourceOperation {
         super.runGlobSourceOperation(this.funcionToRun.bind(this));
     }
     funcionToRun(sourceFromGlob) {
-        let destinationFileFullPath = this.getDestinationFileFullPathAndEnsureDirectoryExists(sourceFromGlob, this.params.destinationDir);
+        let destinationFileFullPath;
+        if (this.params.keepFolderStructure) {
+            destinationFileFullPath = this.getDestinationFileFullPathAndEnsureDirectoryExists(sourceFromGlob, this.params.destinationDir);
+        }
+        else {
+            destinationFileFullPath = path.join(this.params.destinationDir, path.basename(sourceFromGlob));
+            console.log(destinationFileFullPath);
+        }
         if (classes_1.FileUtils.isFile(sourceFromGlob)) {
             fsExtra.copyFileSync(sourceFromGlob, destinationFileFullPath);
         }
