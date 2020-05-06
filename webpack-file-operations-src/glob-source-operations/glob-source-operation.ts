@@ -1,7 +1,7 @@
 import * as path from 'path';
 import * as glob from 'glob';
 
-import { ConsoleLogger, Operation, OperationParameter, IOperationParameter} from 'webpack-hook-attacher-plugin';
+import { ConsoleLogger, Operation, OperationParameter, IOperationParameter, Utils} from 'webpack-hook-attacher-plugin';
 
 import { FileUtils } from '../classes';
 
@@ -37,6 +37,7 @@ export abstract class GlobSourceOperation extends Operation {
         super.setParams(params);
         this.params = params;
         this.setFullSourceGlobPatterns();
+        ConsoleLogger.consoleDebug(`this.sourceRoots after setFullSourceGlobPatterns: ${Utils.formattedJSONStringify(this.sourceRoots)}`);
     }
 
     protected runGlobSourceOperation(funcionToRun: Function, executeFuncionToRunOnSourcesFromGlobOneByOne: boolean = true): void {
@@ -46,7 +47,7 @@ export abstract class GlobSourceOperation extends Operation {
             }
 
             let sourcesFromGlob: string[] = [];
-            this.sourceRoots.forEach((sourceRoot: string) => {
+            this.sourceRoots.forEach((sourceRoot: string): void => {
                 sourcesFromGlob.push(...glob.sync(sourceRoot, this.params.globOptions));
             });
 
@@ -67,11 +68,11 @@ export abstract class GlobSourceOperation extends Operation {
                     ConsoleLogger.consoleWarning(missingPathErrorText);
                 }
             } else {
-                ConsoleLogger.consoleDebug(`sourceFromGlobs: ${sourcesFromGlob}`);
+                ConsoleLogger.consoleDebug(`sourceFromGlobs: ${Utils.formattedJSONStringify(sourcesFromGlob)}`);
             }
 
             if (executeFuncionToRunOnSourcesFromGlobOneByOne) {
-                sourcesFromGlob.forEach((sourceFromGlob: string) => {
+                sourcesFromGlob.forEach((sourceFromGlob: string): void => {
                     funcionToRun(sourceFromGlob);
                 });
             } else {
@@ -81,7 +82,7 @@ export abstract class GlobSourceOperation extends Operation {
     }
 
     private setFullSourceGlobPatterns(): void {
-        this.params.sourceRoots.forEach((sourceRoot: string) => {
+        this.params.sourceRoots.forEach((sourceRoot: string): void => {
             if (this.params.globPattern) {
                 this.sourceRoots.push(path.join(sourceRoot, this.params.globPattern));
             } else {
@@ -91,7 +92,7 @@ export abstract class GlobSourceOperation extends Operation {
     }
 
     private setHashedFullSourceGlobPatterns(): void {
-        this.sourceRoots.forEach((sourceRoot: string, index: number) => {
+        this.sourceRoots.forEach((sourceRoot: string, index: number): void => {
             this.sourceRoots[index] = FileUtils.replaceHash(sourceRoot, this.compilerHookParameters.compilation);
         });
     }
@@ -100,7 +101,7 @@ export abstract class GlobSourceOperation extends Operation {
     //returns with the destination file
     protected getDestinationFileFullPathAndEnsureDirectoryExists(sourceFileRelativePath: string, destinationDir: string): string {
         let destinationFileFullPath: string;
-        this.params.sourceRoots.forEach((sourceRoot: string) => {
+        this.params.sourceRoots.forEach((sourceRoot: string): void => {
             let sourceFileIsInTheSourceRoot: boolean = path.resolve(sourceFileRelativePath).startsWith(path.resolve(sourceRoot));
             if (sourceFileIsInTheSourceRoot) {
                 destinationFileFullPath = path.join(destinationDir, path.relative(sourceRoot, sourceFileRelativePath));

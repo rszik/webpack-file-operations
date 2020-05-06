@@ -1,4 +1,5 @@
 import * as fsExtra from 'fs-extra';
+import * as path from 'path';
 
 import { GlobSourceOperation, GlobSourceOperationParameter, IGlobSourceOperationParameter } from './glob-source-operation';
 import { Utils } from 'webpack-hook-attacher-plugin';
@@ -6,11 +7,13 @@ import { FileUtils } from '../classes';
 
 export interface ICopyMultipleFilesParameter extends IGlobSourceOperationParameter {
     destinationDir: string;
+    keepFolderStructure?: boolean;
 }
 
 export class CopyMultipleFilesParameter extends GlobSourceOperationParameter {
     //ICopyMultipleFilesParameter
     public destinationDir: string = null;
+    public keepFolderStructure?: boolean = true;
 }
 
 export class CopyMultipleFiles extends GlobSourceOperation {
@@ -31,7 +34,13 @@ export class CopyMultipleFiles extends GlobSourceOperation {
     }
 
     private funcionToRun(sourceFromGlob: string): void {
-        let destinationFileFullPath: string = this.getDestinationFileFullPathAndEnsureDirectoryExists(sourceFromGlob, this.params.destinationDir);
+        let destinationFileFullPath: string;
+        if (this.params.keepFolderStructure) {
+            destinationFileFullPath = this.getDestinationFileFullPathAndEnsureDirectoryExists(sourceFromGlob, this.params.destinationDir);
+        } else {
+            destinationFileFullPath = path.join(this.params.destinationDir, path.basename(sourceFromGlob));
+            console.log(destinationFileFullPath);
+        }
         if (FileUtils.isFile(sourceFromGlob)) {
             fsExtra.copyFileSync(sourceFromGlob, destinationFileFullPath);
         }
