@@ -10,21 +10,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fsExtra = __importStar(require("fs-extra"));
 const single_source_operation_1 = require("./single-source-operation");
 const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
-class DeleteSingleFileParameter extends single_source_operation_1.SingleSourceOperationParameter {
+class DeleteSingleFileOrDirectoryParameter extends single_source_operation_1.SingleSourceOperationParameter {
     constructor() {
         super(...arguments);
-        this.sourceFilePath = null;
+        this.deletePath = null;
     }
     getSingleSource() {
-        return this.sourceFilePath;
+        return this.deletePath;
     }
 }
-exports.DeleteSingleFileParameter = DeleteSingleFileParameter;
-class DeleteSingleFile extends single_source_operation_1.SingleSourceOperation {
+exports.DeleteSingleFileOrDirectoryParameter = DeleteSingleFileOrDirectoryParameter;
+class DeleteSingleFileOrDirectory extends single_source_operation_1.SingleSourceOperation {
     constructor(userParams) {
         super();
-        this.name = 'DeleteSingleFile';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new DeleteSingleFileParameter());
+        this.name = 'DeleteSingleFileOrDirectory';
+        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new DeleteSingleFileOrDirectoryParameter());
         super.setParams(this.params);
     }
     run() {
@@ -34,4 +34,4 @@ class DeleteSingleFile extends single_source_operation_1.SingleSourceOperation {
         fsExtra.removeSync(sourceFilePath);
     }
 }
-exports.DeleteSingleFile = DeleteSingleFile;
+exports.DeleteSingleFileOrDirectory = DeleteSingleFileOrDirectory;

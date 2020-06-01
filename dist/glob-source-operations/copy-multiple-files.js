@@ -38,7 +38,6 @@ class CopyMultipleFiles extends glob_source_operation_1.GlobSourceOperation {
         }
         else {
             destinationFileFullPath = path.join(this.params.destinationDir, path.basename(sourceFromGlob));
-            console.log(destinationFileFullPath);
         }
         if (classes_1.FileUtils.isFile(sourceFromGlob)) {
             fsExtra.copyFileSync(sourceFromGlob, destinationFileFullPath);

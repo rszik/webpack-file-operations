@@ -4,7 +4,7 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./copy-single-file"));
-__export(require("./delete-single-file"));
+__export(require("./delete-single-file-or-directory"));
 __export(require("./move-single-file"));
 __export(require("./mkdir"));
 __export(require("./insert-text-to-single-file"));

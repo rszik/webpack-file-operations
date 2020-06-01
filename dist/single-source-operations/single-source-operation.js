@@ -43,6 +43,16 @@ class SingleSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
             }
         });
     }
+    runSingleFileOperation(func) {
+        super.runWrapper(this, () => {
+            let singleSource = this.params.getSingleSource();
+            this.checkCantBeGlobPattern(singleSource);
+            if (this.params.replaceHash) {
+                singleSource = classes_1.FileUtils.replaceHash(singleSource, this.compilerHookParameters.compilation);
+            }
+            func(singleSource);
+        });
+    }
     checkCantBeGlobPattern(singleSource) {
         if (glob.hasMagic(singleSource)) {
             let errorText = `${this.name} - Source '${this.params.getSingleSource()}' can't be glob pattern`;

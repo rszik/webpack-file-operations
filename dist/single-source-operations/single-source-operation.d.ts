@@ -12,6 +12,7 @@ export declare abstract class SingleSourceOperation extends Operation {
     params: SingleSourceOperationParameter;
     protected setParams(params: SingleSourceOperationParameter): void;
     protected runSingleFileOperationIfExists(func: Function): void;
+    protected runSingleFileOperation(func: Function): void;
     private checkCantBeGlobPattern;
     protected ensureDestinationFileDirectoryExists(destinationFilePath: string): void;
 }

@@ -30,7 +30,7 @@ class MkDir extends single_source_operation_1.SingleSourceOperation {
         this.params.throwErrorIfSourceDoesNotExists = false;
     }
     run() {
-        super.runSingleFileOperationIfExists(this.funcionToRun.bind(this));
+        super.runSingleFileOperation(this.funcionToRun.bind(this));
     }
     funcionToRun(dirPathToMake) {
         fsExtra.ensureDirSync(dirPathToMake);

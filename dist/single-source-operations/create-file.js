@@ -28,7 +28,7 @@ class CreateFile extends single_source_operation_1.SingleSourceOperation {
         super.setParams(this.params);
     }
     run() {
-        super.runSingleFileOperationIfExists(this.funcionToRun.bind(this));
+        super.runSingleFileOperation(this.funcionToRun.bind(this));
     }
     funcionToRun(sourceFilePath) {
         this.ensureDestinationFileDirectoryExists(sourceFilePath);
