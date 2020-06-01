@@ -47,6 +47,19 @@ export abstract class SingleSourceOperation extends Operation {
         });
     }
 
+    protected runSingleFileOperation(func: Function): void {
+        super.runWrapper(this, (): void => {
+            let singleSource: string = this.params.getSingleSource();
+            this.checkCantBeGlobPattern(singleSource);
+
+            if (this.params.replaceHash) {
+                singleSource = FileUtils.replaceHash(singleSource, this.compilerHookParameters.compilation);
+            }
+
+            func(singleSource);
+        });
+    }
+
     private checkCantBeGlobPattern(singleSource: string): void {
         if (glob.hasMagic(singleSource)) {
             let errorText: string = `${this.name} - Source '${this.params.getSingleSource()}' can't be glob pattern`;

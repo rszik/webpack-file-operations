@@ -38,8 +38,7 @@ export class CopyMultipleFiles extends GlobSourceOperation {
         if (this.params.keepFolderStructure) {
             destinationFileFullPath = this.getDestinationFileFullPathAndEnsureDirectoryExists(sourceFromGlob, this.params.destinationDir);
         } else {
-            destinationFileFullPath = path.join(this.params.destinationDir, path.basename(sourceFromGlob));
-            console.log(destinationFileFullPath);
+            destinationFileFullPath = path.join(this.params.destinationDir, path.basename(sourceFromGlob));            
         }
         if (FileUtils.isFile(sourceFromGlob)) {
             fsExtra.copyFileSync(sourceFromGlob, destinationFileFullPath);

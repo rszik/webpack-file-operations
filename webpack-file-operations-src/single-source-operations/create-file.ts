@@ -31,7 +31,7 @@ export class CreateFile extends SingleSourceOperation {
     public params: CreateFileParameter;
 
     public run(): void {
-        super.runSingleFileOperationIfExists(this.funcionToRun.bind(this));
+        super.runSingleFileOperation(this.funcionToRun.bind(this));
     }
 
     private funcionToRun(sourceFilePath: string): void {

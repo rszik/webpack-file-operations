@@ -34,7 +34,7 @@ export class MkDir extends SingleSourceOperation {
     public params: MkDirParameter;
 
     public run(): void {
-        super.runSingleFileOperationIfExists(this.funcionToRun.bind(this));
+        super.runSingleFileOperation(this.funcionToRun.bind(this));
     }
 
     private funcionToRun(dirPathToMake: string): void {
