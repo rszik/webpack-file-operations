@@ -21,28 +21,28 @@ export class CopySingleFileParameter extends SingleSourceOperationParameter {
 
 export class CopySingleFile extends SingleSourceOperation {
 
-    private constructor(userParams: ICopySingleFileParameter) {
+    constructor(userParams: ICopySingleFileParameter) {
         super();
         this.params = Utils.mergeUserSettingsToDeafultSetting(userParams, new CopySingleFileParameter());
         super.setParams(this.params);
 
-        let options: any = {};
+        /*let options: any = {};
 
         CopySingleFile.CreateOperation(options.afterPlugins, {
             additionalName: `index.html`,
             sourceFilePath: '',
             destinationFilePath: ''
-        });
+        });*/
     }
 
     public name: string = 'CopySingleFile';
 
     public params: CopySingleFileParameter;
 
-    public static CreateOperation(hook: HookBase, userParams: ICopySingleFileParameter): void {
+    /*public static CreateOperation(hook: HookBase, userParams: ICopySingleFileParameter): void {
         let operation: CopySingleFile = new CopySingleFile(userParams);
         hook.addOperations(operation);
-    }
+    }*/
 
     public run(): void {
         super.runSingleFileOperationIfExists(this.funcionToRun.bind(this));

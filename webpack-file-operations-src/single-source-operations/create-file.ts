@@ -21,7 +21,7 @@ export class CreateFileParameter extends SingleSourceOperationParameter {
 export class CreateFile extends SingleSourceOperation {
 
 
-    private constructor(userParams: ICreateFileParameter) {
+    constructor(userParams: ICreateFileParameter) {
         super();
         this.params = Utils.mergeUserSettingsToDeafultSetting(userParams, new CreateFileParameter());
         super.setParams(this.params);
