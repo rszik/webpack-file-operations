@@ -1,4 +1,4 @@
-import { Utils } from 'webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 
 import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOperationParameter } from './single-source-operation';
 
@@ -6,7 +6,7 @@ import { ReplaceRule, FileUtils } from '../classes';
 
 export interface IReplaceInSingleFileParameter extends ISingleSourceOperationParameter {
     sourceFilePath: string;
-    encoding?: string ;
+    encoding?: string;
     replaceRules?: ReplaceRule[];
 }
 
@@ -16,8 +16,8 @@ export class ReplaceInSingleFileParameter extends SingleSourceOperationParameter
     public replaceRules: ReplaceRule[] = null;
     public encoding?: string = 'utf-8';
 
-     //SingleSourceOperationParameter
-     public getSingleSource(): string {
+    //SingleSourceOperationParameter
+    public getSingleSource(): string {
         return this.sourceFilePath;
     }
 }

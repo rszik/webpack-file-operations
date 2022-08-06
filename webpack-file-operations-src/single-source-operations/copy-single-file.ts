@@ -1,6 +1,6 @@
 import * as fsExtra from 'fs-extra';
 
-import { HookBase, Utils } from 'webpack-hook-attacher-plugin';
+import { HookBase, Utils } from '@wecdev/webpack-hook-attacher-plugin';
 import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOperationParameter } from './single-source-operation';
 
 export interface ICopySingleFileParameter extends ISingleSourceOperationParameter {

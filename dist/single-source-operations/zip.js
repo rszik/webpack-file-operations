@@ -23,7 +23,7 @@ exports.Zip = exports.ZipParameter = void 0;
 const path = __importStar(require("path"));
 const zipper = __importStar(require("zip-local"));
 const single_source_operation_1 = require("./single-source-operation");
-const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
+const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
 const classes_1 = require("../classes");
 class ZipParameter extends single_source_operation_1.SingleSourceOperationParameter {
     constructor() {

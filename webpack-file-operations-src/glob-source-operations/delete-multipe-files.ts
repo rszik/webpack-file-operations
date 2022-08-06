@@ -1,6 +1,6 @@
 import * as fsExtra from 'fs-extra';
 import { GlobSourceOperation, GlobSourceOperationParameter, IGlobSourceOperationParameter } from './glob-source-operation';
-import { Utils } from 'webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 
 
 export interface IDeleteMultipeFilesParameter extends IGlobSourceOperationParameter {

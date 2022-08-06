@@ -1,7 +1,7 @@
 import * as fsExtra from 'fs-extra';
 
 import { SingleSourceOperationParameter, SingleSourceOperation, ISingleSourceOperationParameter } from './single-source-operation';
-import { Utils } from 'webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 
 export interface IMoveSingleFileParameter extends ISingleSourceOperationParameter {
     sourceFilePath: string;

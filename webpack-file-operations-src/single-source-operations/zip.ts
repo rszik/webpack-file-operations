@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as zipper from 'zip-local';
 
 import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOperationParameter } from './single-source-operation';
-import { Utils, ConsoleLogger } from 'webpack-hook-attacher-plugin';
+import { Utils, ConsoleLogger } from '@wecdev/webpack-hook-attacher-plugin';
 import { FileUtils } from '../classes';
 
 export interface IZipParameter extends ISingleSourceOperationParameter {

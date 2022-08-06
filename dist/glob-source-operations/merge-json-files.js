@@ -22,7 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MergeJSONFiles = exports.MergeJSONFilesParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
 const path = __importStar(require("path"));
-const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
+const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
 const glob_source_operation_1 = require("./glob-source-operation");
 const classes_1 = require("../classes");
 class MergeJSONFilesParameter extends glob_source_operation_1.GlobSourceOperationParameter {

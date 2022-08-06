@@ -21,7 +21,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CopySingleFile = exports.CopySingleFileParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
-const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
+const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
 const single_source_operation_1 = require("./single-source-operation");
 class CopySingleFileParameter extends single_source_operation_1.SingleSourceOperationParameter {
     constructor() {

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InsertTextToSingleFile = exports.InsertTextToSingleFileParameter = void 0;
-const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
+const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
 const classes_1 = require("../classes");
 const single_source_operation_1 = require("./single-source-operation");
 class InsertTextToSingleFileParameter extends single_source_operation_1.SingleSourceOperationParameter {

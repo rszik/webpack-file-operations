@@ -1,11 +1,11 @@
 # webpack-file-operations
-File and directory operation collection for webpack build. You can attach any of these operations (delete/create/modify files and directories, merge json, etc...) to any webpack hook before, after and in the middle of the builds with [webpack-hook-attacher-plugin](https://www.npmjs.com/package/webpack-hook-attacher-plugin) 
+File and directory operation collection for webpack build. You can attach any of these operations (delete/create/modify files and directories, merge json, etc...) to any webpack hook before, after and in the middle of the builds with [webpack-hook-attacher-plugin](https://www.npmjs.com/package/@wecdev/webpack-hook-attacher-plugin) 
 
 ## I know I can do better :)
 If you have found bug or need an additional operation don't hesitate to contact me.
 
 ## Install
-`npm install webpack-file-operations --save-dev `
+`npm install @wecdev/webpack-file-operations --save-dev `
 
 ## Use Opertaions 
 You can attach pre written opertaions to any webpack hook during the webpack or webpack-dev-server build from 
@@ -26,7 +26,7 @@ Webpack.config.js:
 import {
     WebpackHookAttacherPlugin,
     Options    
-} from 'webpack-hook-attacher-plugin';
+} from '@wecdev/webpack-hook-attacher-plugin';
 
 public static getAppModuleWebpackHookAttacherPlugin(): WebpackHookAttacherPlugin {
 

@@ -1,5 +1,5 @@
 import * as glob from 'glob';
-import { Operation, OperationParameter, IOperationParameter } from 'webpack-hook-attacher-plugin';
+import { Operation, OperationParameter, IOperationParameter } from '@wecdev/webpack-hook-attacher-plugin';
 export interface IGlobSourceOperationParameter extends IOperationParameter {
     replaceHash?: boolean;
     hideWarningIfSourceDoesNotExists?: boolean;

@@ -1,4 +1,4 @@
-import { Operation, OperationParameter, IOperationParameter } from 'webpack-hook-attacher-plugin';
+import { Operation, OperationParameter, IOperationParameter } from '@wecdev/webpack-hook-attacher-plugin';
 export interface ISingleSourceOperationParameter extends IOperationParameter {
     replaceHash?: boolean;
     throwErrorIfSourceDoesNotExists?: boolean;

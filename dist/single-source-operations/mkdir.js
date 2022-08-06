@@ -22,7 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MkDir = exports.MkDirParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
 const single_source_operation_1 = require("./single-source-operation");
-const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
+const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
 class MkDirParameter extends single_source_operation_1.SingleSourceOperationParameter {
     constructor() {
         super(...arguments);

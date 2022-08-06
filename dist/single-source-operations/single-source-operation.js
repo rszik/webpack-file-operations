@@ -23,7 +23,7 @@ exports.SingleSourceOperation = exports.SingleSourceOperationParameter = void 0;
 const glob = __importStar(require("glob"));
 const path = __importStar(require("path"));
 const fsExtra = __importStar(require("fs-extra"));
-const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
+const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
 const classes_1 = require("../classes");
 class SingleSourceOperationParameter extends webpack_hook_attacher_plugin_1.OperationParameter {
     constructor() {

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.InsertTextToFiles = exports.InsertTextToFilesParameter = void 0;
 const classes_1 = require("../classes");
 const glob_source_operation_1 = require("./glob-source-operation");
-const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
+const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
 class InsertTextToFilesParameter extends glob_source_operation_1.GlobSourceOperationParameter {
     constructor() {
         super(...arguments);

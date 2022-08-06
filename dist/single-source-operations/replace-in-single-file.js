@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReplaceInSingleFile = exports.ReplaceInSingleFileParameter = void 0;
-const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
+const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
 const single_source_operation_1 = require("./single-source-operation");
 const classes_1 = require("../classes");
 class ReplaceInSingleFileParameter extends single_source_operation_1.SingleSourceOperationParameter {

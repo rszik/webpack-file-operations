@@ -2,13 +2,13 @@ import { IndexAndCount, FileUtils } from '../classes';
 
 import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOperationParameter } from './single-source-operation';
 
-import { Utils } from 'webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 
 
 export interface IRemoveRowsFromSingleFileParameter extends ISingleSourceOperationParameter {
     sourceFilePath: string;
     rowIndexAndRemoveCount: IndexAndCount[];
-    encoding?: string ;
+    encoding?: string;
 }
 
 export class RemoveRowsFromSingleFileParameter extends SingleSourceOperationParameter implements IRemoveRowsFromSingleFileParameter {
@@ -17,8 +17,8 @@ export class RemoveRowsFromSingleFileParameter extends SingleSourceOperationPara
     public rowIndexAndRemoveCount: IndexAndCount[] = null;
     public encoding?: string = 'utf-8';
 
-     //SingleSourceOperationParameter
-     public getSingleSource(): string {
+    //SingleSourceOperationParameter
+    public getSingleSource(): string {
         return this.sourceFilePath;
     }
 }

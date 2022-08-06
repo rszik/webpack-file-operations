@@ -2,7 +2,7 @@ import * as fsExtra from 'fs-extra';
 import * as path from 'path';
 
 import { GlobSourceOperation, GlobSourceOperationParameter, IGlobSourceOperationParameter } from './glob-source-operation';
-import { Utils } from 'webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 import { FileUtils } from '../classes';
 
 export interface ICopyMultipleFilesParameter extends IGlobSourceOperationParameter {
@@ -38,7 +38,7 @@ export class CopyMultipleFiles extends GlobSourceOperation {
         if (this.params.keepFolderStructure) {
             destinationFileFullPath = this.getDestinationFileFullPathAndEnsureDirectoryExists(sourceFromGlob, this.params.destinationDir);
         } else {
-            destinationFileFullPath = path.join(this.params.destinationDir, path.basename(sourceFromGlob));            
+            destinationFileFullPath = path.join(this.params.destinationDir, path.basename(sourceFromGlob));
         }
         if (FileUtils.isFile(sourceFromGlob)) {
             fsExtra.copyFileSync(sourceFromGlob, destinationFileFullPath);

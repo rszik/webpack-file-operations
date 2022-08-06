@@ -1,11 +1,11 @@
 
 import { GlobSourceOperation, GlobSourceOperationParameter, IGlobSourceOperationParameter } from './glob-source-operation';
-import { Utils } from 'webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 import { ReplaceRule, FileUtils } from '../classes';
 
 
 export interface IReplaceInFilesParameter extends IGlobSourceOperationParameter {
-    encoding?: string ;
+    encoding?: string;
     replaceRules?: ReplaceRule[];
 }
 

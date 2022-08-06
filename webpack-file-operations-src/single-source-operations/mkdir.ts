@@ -1,7 +1,7 @@
 import * as fsExtra from 'fs-extra';
 
 import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOperationParameter } from './single-source-operation';
-import { Utils } from 'webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 
 
 export interface IMkDirParameter extends ISingleSourceOperationParameter {

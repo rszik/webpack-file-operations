@@ -1,5 +1,5 @@
 
-import { Utils } from 'webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 import { FileUtils } from '../classes';
 import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOperationParameter } from './single-source-operation';
 
@@ -17,8 +17,8 @@ export class InsertTextToSingleFileParameter extends SingleSourceOperationParame
     public text: string = null;
     public encoding: string = 'utf-8';
 
-     //SingleSourceOperationParameter
-     public getSingleSource(): string {
+    //SingleSourceOperationParameter
+    public getSingleSource(): string {
         return this.sourceFilePath;
     }
 }

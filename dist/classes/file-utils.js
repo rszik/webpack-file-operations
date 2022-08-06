@@ -22,7 +22,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileUtils = exports.ReplaceRule = exports.IndexAndCount = exports.SplittedFile = void 0;
 const path = __importStar(require("path"));
 const fsExtra = __importStar(require("fs-extra"));
-const webpack_hook_attacher_plugin_1 = require("webpack-hook-attacher-plugin");
+const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
 class SplittedFile {
 }
 exports.SplittedFile = SplittedFile;
