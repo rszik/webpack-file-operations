@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 import { Compilation } from 'webpack';
 export declare class SplittedFile {
     fileContentRows: string[];

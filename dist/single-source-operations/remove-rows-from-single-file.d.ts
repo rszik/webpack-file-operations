@@ -1,3 +1,7 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 import { IndexAndCount } from '../classes';
 import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOperationParameter } from './single-source-operation';
 export interface IRemoveRowsFromSingleFileParameter extends ISingleSourceOperationParameter {

@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
+
 import * as path from 'path';
 import * as glob from 'glob';
 
@@ -48,7 +53,7 @@ export abstract class GlobSourceOperation extends Operation {
 
             let sourcesFromGlob: string[] = [];
             this.sourceRoots.forEach((sourceRoot: string): void => {
-                sourcesFromGlob.push(...glob.sync(sourceRoot, this.params.globOptions));
+                sourcesFromGlob.push(...glob.sync(sourceRoot.replace(/\\/g, '/'), this.params.globOptions));
             });
 
             if (this.params.checkGlobResultNumber) {

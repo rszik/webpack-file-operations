@@ -1,4 +1,8 @@
 "use strict";
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RemoveRowsFromFiles = exports.RemoveRowsFromFilesParameter = void 0;
 const glob_source_operation_1 = require("./glob-source-operation");

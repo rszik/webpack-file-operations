@@ -1,13 +1,26 @@
 # webpack-file-operations
 File and directory operation collection for webpack build. You can attach any of these operations (delete/create/modify files and directories, merge json, etc...) to any webpack hook before, after and in the middle of the builds with [webpack-hook-attacher-plugin](https://www.npmjs.com/package/@wecdev/webpack-hook-attacher-plugin) 
 
-## I know I can do better :)
-If you have found bug or need an additional operation don't hesitate to contact me.
-
 ## Install
 `npm install @wecdev/webpack-file-operations --save-dev `
 
-## Use Opertaions 
+## I know I can do better :)
+If you have found bug or need an additional operation don't hesitate to contact me.
+
+## Copyright & Support
+Copyright (c) 2022, Roland Szikora. 
+You can support this package at https://www.patreon.com/rolandszik 
+
+## Licensing
+This project run under AGPL-3.0
+
+Full license
+https://www.gnu.org/licenses/agpl-3.0.txt
+
+TLDR
+https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)
+
+## Use Operations 
 You can attach pre written opertaions to any webpack hook during the webpack or webpack-dev-server build from 
 
 such as 

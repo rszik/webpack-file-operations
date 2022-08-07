@@ -1,4 +1,8 @@
 "use strict";
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
@@ -55,7 +59,7 @@ class GlobSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
             }
             let sourcesFromGlob = [];
             this.sourceRoots.forEach((sourceRoot) => {
-                sourcesFromGlob.push(...glob.sync(sourceRoot, this.params.globOptions));
+                sourcesFromGlob.push(...glob.sync(sourceRoot.replace(/\\/g, '/'), this.params.globOptions));
             });
             if (this.params.checkGlobResultNumber) {
                 if (sourcesFromGlob.length !== this.params.checkGlobResultNumber) {

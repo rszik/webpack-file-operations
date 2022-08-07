@@ -1,3 +1,8 @@
+/*!
+ * Copyright (c) 2022, Roland Szikora.
+ * You can support this package at https://www.patreon.com/rolandszik
+ */
+
 import * as glob from 'glob';
 import * as path from 'path';
 import * as fsExtra from 'fs-extra';
