@@ -19,10 +19,10 @@ export declare class ReplaceRule {
 export declare class FileUtils {
     static replaceHash(filename: string, compilationParam: Compilation): string;
     static ensureFolderStructureExists(destinationDirectory: string): void;
-    static getSplittedFile(sourceFromGlob: string, encoding: string): SplittedFile;
+    static getSplittedFile(sourceFromGlob: string, encoding: BufferEncoding): SplittedFile;
     static isFile(fullPath: string): boolean;
     static isExists(fullPath: string): boolean;
-    static insertTextToSingleFile(singleSource: string, encoding: string, text: string, rowIndex: number): void;
-    static removeRowsFromSingleFile(sourceFilePath: string, encoding: string, rowIndexAndRemoveCountList: IndexAndCount[]): void;
-    static replaceInSingleFile(sourceFilePath: string, encoding: string, replaceRules: ReplaceRule[]): void;
+    static insertTextToSingleFile(singleSource: string, encoding: BufferEncoding, text: string, rowIndex: number): void;
+    static removeRowsFromSingleFile(sourceFilePath: string, encoding: BufferEncoding, rowIndexAndRemoveCountList: IndexAndCount[]): void;
+    static replaceInSingleFile(sourceFilePath: string, encoding: BufferEncoding, replaceRules: ReplaceRule[]): void;
 }

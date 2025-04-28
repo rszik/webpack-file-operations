@@ -12,14 +12,14 @@ import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 export interface IInsertTextToFilesParameter extends IGlobSourceOperationParameter {
     rowIndex: number;
     text: string;
-    encoding?: string;
+    encoding?: BufferEncoding;
 }
 
 export class InsertTextToFilesParameter extends GlobSourceOperationParameter implements IInsertTextToFilesParameter {
     //IInsertTextToFilesParameter
     public rowIndex: number = 0;
     public text: string = null;
-    public encoding: string = 'utf-8';
+    public encoding: BufferEncoding = 'utf-8';
 }
 
 export class InsertTextToFiles extends GlobSourceOperation {

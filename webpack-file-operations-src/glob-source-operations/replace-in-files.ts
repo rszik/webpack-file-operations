@@ -9,14 +9,14 @@ import { ReplaceRule, FileUtils } from '../classes';
 
 
 export interface IReplaceInFilesParameter extends IGlobSourceOperationParameter {
-    encoding?: string;
+    encoding?: BufferEncoding;
     replaceRules?: ReplaceRule[];
 }
 
 export class ReplaceInFilesParameter extends GlobSourceOperationParameter implements IReplaceInFilesParameter {
     //IReplaceInFilesParameter
     public replaceRules: ReplaceRule[] = null;
-    public encoding?: string = 'utf-8';
+    public encoding?: BufferEncoding = 'utf-8';
 }
 
 export class ReplaceInFiles extends GlobSourceOperation {

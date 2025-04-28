@@ -4,11 +4,11 @@
  */
 import { GlobSourceOperationParameter, GlobSourceOperation, IGlobSourceOperationParameter } from './glob-source-operation';
 export interface IMergeJSONFilesParameter extends IGlobSourceOperationParameter {
-    encoding?: string;
+    encoding?: BufferEncoding;
     destinationFile: string;
 }
 export declare class MergeJSONFilesParameter extends GlobSourceOperationParameter {
-    encoding?: string;
+    encoding?: BufferEncoding;
     destinationFile: string;
     replacer?: (this: any, key: string, value: any) => any;
     space?: string | number;

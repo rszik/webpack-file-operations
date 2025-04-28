@@ -12,13 +12,13 @@ import { FileUtils } from '../classes';
 
 
 export interface IMergeJSONFilesParameter extends IGlobSourceOperationParameter {
-    encoding?: string;
+    encoding?: BufferEncoding;
     destinationFile: string;
 }
 
 export class MergeJSONFilesParameter extends GlobSourceOperationParameter {
     //IMergeJSONFilesParameter
-    public encoding?: string = 'utf-8';
+    public encoding?: BufferEncoding = 'utf-8';
     public destinationFile: string = null;
 
     public replacer?: (this: any, key: string, value: any) => any = null;

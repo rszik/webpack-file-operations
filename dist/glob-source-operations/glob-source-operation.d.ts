@@ -2,8 +2,8 @@
  * Copyright (c) 2022, Roland Szikora.
  * You can support this package at https://www.patreon.com/rolandszik
  */
-import * as glob from 'glob';
 import { Operation, OperationParameter, IOperationParameter } from '@wecdev/webpack-hook-attacher-plugin';
+import { GlobOptionsWithFileTypesFalse } from 'glob';
 export interface IGlobSourceOperationParameter extends IOperationParameter {
     replaceHash?: boolean;
     hideWarningIfSourceDoesNotExists?: boolean;
@@ -11,7 +11,7 @@ export interface IGlobSourceOperationParameter extends IOperationParameter {
     throwErrorIfNotExpectedGlobResultNumberFound?: boolean;
     sourceRoots: string[];
     globPattern?: string;
-    globOptions?: glob.IOptions;
+    globOptions?: GlobOptionsWithFileTypesFalse;
 }
 export declare class GlobSourceOperationParameter extends OperationParameter {
     replaceHash?: boolean;
@@ -20,7 +20,7 @@ export declare class GlobSourceOperationParameter extends OperationParameter {
     throwErrorIfNotExpectedGlobResultNumberFound?: boolean;
     sourceRoots: string[];
     globPattern?: string;
-    globOptions?: glob.IOptions;
+    globOptions?: GlobOptionsWithFileTypesFalse;
 }
 export declare abstract class GlobSourceOperation extends Operation {
     params: GlobSourceOperationParameter;

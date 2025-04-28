@@ -6,12 +6,12 @@ import { GlobSourceOperation, GlobSourceOperationParameter, IGlobSourceOperation
 export interface IInsertTextToFilesParameter extends IGlobSourceOperationParameter {
     rowIndex: number;
     text: string;
-    encoding?: string;
+    encoding?: BufferEncoding;
 }
 export declare class InsertTextToFilesParameter extends GlobSourceOperationParameter implements IInsertTextToFilesParameter {
     rowIndex: number;
     text: string;
-    encoding: string;
+    encoding: BufferEncoding;
 }
 export declare class InsertTextToFiles extends GlobSourceOperation {
     constructor(userParams: IInsertTextToFilesParameter);

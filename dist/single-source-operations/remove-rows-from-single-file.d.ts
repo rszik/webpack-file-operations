@@ -7,12 +7,12 @@ import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOpe
 export interface IRemoveRowsFromSingleFileParameter extends ISingleSourceOperationParameter {
     sourceFilePath: string;
     rowIndexAndRemoveCount: IndexAndCount[];
-    encoding?: string;
+    encoding?: BufferEncoding;
 }
 export declare class RemoveRowsFromSingleFileParameter extends SingleSourceOperationParameter implements IRemoveRowsFromSingleFileParameter {
     sourceFilePath: string;
     rowIndexAndRemoveCount: IndexAndCount[];
-    encoding?: string;
+    encoding?: BufferEncoding;
     getSingleSource(): string;
 }
 export declare class RemoveRowsFromSingleFile extends SingleSourceOperation {

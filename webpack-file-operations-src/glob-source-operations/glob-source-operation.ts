@@ -9,6 +9,8 @@ import * as glob from 'glob';
 import { ConsoleLogger, Operation, OperationParameter, IOperationParameter, Utils } from '@wecdev/webpack-hook-attacher-plugin';
 
 import { FileUtils } from '../classes';
+import { GlobOptionsWithFileTypesFalse } from 'glob';
+
 
 export interface IGlobSourceOperationParameter extends IOperationParameter {
     replaceHash?: boolean;
@@ -18,7 +20,7 @@ export interface IGlobSourceOperationParameter extends IOperationParameter {
 
     sourceRoots: string[];
     globPattern?: string;
-    globOptions?: glob.IOptions;
+    globOptions?: GlobOptionsWithFileTypesFalse;
 }
 
 export class GlobSourceOperationParameter extends OperationParameter {
@@ -29,7 +31,7 @@ export class GlobSourceOperationParameter extends OperationParameter {
 
     public sourceRoots: string[] = null;
     public globPattern?: string = '**/*';
-    public globOptions?: glob.IOptions = {};
+    public globOptions?: GlobOptionsWithFileTypesFalse = {};
 }
 
 export abstract class GlobSourceOperation extends Operation {

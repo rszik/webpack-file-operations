@@ -13,14 +13,14 @@ import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
 export interface IRemoveRowsFromSingleFileParameter extends ISingleSourceOperationParameter {
     sourceFilePath: string;
     rowIndexAndRemoveCount: IndexAndCount[];
-    encoding?: string;
+    encoding?: BufferEncoding;
 }
 
 export class RemoveRowsFromSingleFileParameter extends SingleSourceOperationParameter implements IRemoveRowsFromSingleFileParameter {
     //IRemoveRowsFromSingleFileParameter
     public sourceFilePath: string = null;
     public rowIndexAndRemoveCount: IndexAndCount[] = null;
-    public encoding?: string = 'utf-8';
+    public encoding?: BufferEncoding = 'utf-8';
 
     //SingleSourceOperationParameter
     public getSingleSource(): string {

@@ -9,13 +9,13 @@ import { IndexAndCount, FileUtils } from '../classes';
 
 export interface IRemoveRowsFromFilesParameter extends IGlobSourceOperationParameter {
     rowIndexAndRemoveCount: IndexAndCount[];
-    encoding?: string;
+    encoding?: BufferEncoding;
 }
 
 export class RemoveRowsFromFilesParameter extends GlobSourceOperationParameter implements IRemoveRowsFromFilesParameter {
     //IRemoveRowsFromFilesParameter
     public rowIndexAndRemoveCount: IndexAndCount[] = null;
-    public encoding?: string = 'utf-8';
+    public encoding?: BufferEncoding = 'utf-8';
 }
 
 export class RemoveRowsFromFiles extends GlobSourceOperation {

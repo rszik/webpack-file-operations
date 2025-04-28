@@ -6,13 +6,13 @@ import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOpe
 import { ReplaceRule } from '../classes';
 export interface IReplaceInSingleFileParameter extends ISingleSourceOperationParameter {
     sourceFilePath: string;
-    encoding?: string;
+    encoding?: BufferEncoding;
     replaceRules?: ReplaceRule[];
 }
 export declare class ReplaceInSingleFileParameter extends SingleSourceOperationParameter implements IReplaceInSingleFileParameter {
     sourceFilePath: string;
     replaceRules: ReplaceRule[];
-    encoding?: string;
+    encoding?: BufferEncoding;
     getSingleSource(): string;
 }
 export declare class ReplaceInSingleFile extends SingleSourceOperation {

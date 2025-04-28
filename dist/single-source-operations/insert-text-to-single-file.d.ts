@@ -7,13 +7,13 @@ export interface IInsertTextToSingleFileParameter extends ISingleSourceOperation
     sourceFilePath: string;
     rowIndex: number;
     text: string;
-    encoding?: string;
+    encoding?: BufferEncoding;
 }
 export declare class InsertTextToSingleFileParameter extends SingleSourceOperationParameter implements IInsertTextToSingleFileParameter {
     sourceFilePath: string;
     rowIndex: number;
     text: string;
-    encoding: string;
+    encoding: BufferEncoding;
     getSingleSource(): string;
 }
 export declare class InsertTextToSingleFile extends SingleSourceOperation {

@@ -11,7 +11,7 @@ import { ReplaceRule, FileUtils } from '../classes';
 
 export interface IReplaceInSingleFileParameter extends ISingleSourceOperationParameter {
     sourceFilePath: string;
-    encoding?: string;
+    encoding?: BufferEncoding;
     replaceRules?: ReplaceRule[];
 }
 
@@ -19,7 +19,7 @@ export class ReplaceInSingleFileParameter extends SingleSourceOperationParameter
     //IReplaceInSingleFileParameter
     public sourceFilePath: string = null;
     public replaceRules: ReplaceRule[] = null;
-    public encoding?: string = 'utf-8';
+    public encoding?: BufferEncoding = 'utf-8';
 
     //SingleSourceOperationParameter
     public getSingleSource(): string {

@@ -5,12 +5,12 @@
 import { GlobSourceOperation, GlobSourceOperationParameter, IGlobSourceOperationParameter } from './glob-source-operation';
 import { ReplaceRule } from '../classes';
 export interface IReplaceInFilesParameter extends IGlobSourceOperationParameter {
-    encoding?: string;
+    encoding?: BufferEncoding;
     replaceRules?: ReplaceRule[];
 }
 export declare class ReplaceInFilesParameter extends GlobSourceOperationParameter implements IReplaceInFilesParameter {
     replaceRules: ReplaceRule[];
-    encoding?: string;
+    encoding?: BufferEncoding;
 }
 export declare class ReplaceInFiles extends GlobSourceOperation {
     constructor(userParams: IReplaceInFilesParameter);

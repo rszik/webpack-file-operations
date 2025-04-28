@@ -6,11 +6,11 @@ import { GlobSourceOperation, GlobSourceOperationParameter, IGlobSourceOperation
 import { IndexAndCount } from '../classes';
 export interface IRemoveRowsFromFilesParameter extends IGlobSourceOperationParameter {
     rowIndexAndRemoveCount: IndexAndCount[];
-    encoding?: string;
+    encoding?: BufferEncoding;
 }
 export declare class RemoveRowsFromFilesParameter extends GlobSourceOperationParameter implements IRemoveRowsFromFilesParameter {
     rowIndexAndRemoveCount: IndexAndCount[];
-    encoding?: string;
+    encoding?: BufferEncoding;
 }
 export declare class RemoveRowsFromFiles extends GlobSourceOperation {
     constructor(userParams: IRemoveRowsFromFilesParameter);
