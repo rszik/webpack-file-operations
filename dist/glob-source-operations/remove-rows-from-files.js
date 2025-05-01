@@ -6,7 +6,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RemoveRowsFromFiles = exports.RemoveRowsFromFilesParameter = void 0;
 const glob_source_operation_1 = require("./glob-source-operation");
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 const classes_1 = require("../classes");
 class RemoveRowsFromFilesParameter extends glob_source_operation_1.GlobSourceOperationParameter {
     constructor() {
@@ -20,7 +20,7 @@ class RemoveRowsFromFiles extends glob_source_operation_1.GlobSourceOperation {
     constructor(userParams) {
         super();
         this.name = 'RemoveRowsFromFiles';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new RemoveRowsFromFilesParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new RemoveRowsFromFilesParameter());
         super.setParams(this.params);
     }
     run() {

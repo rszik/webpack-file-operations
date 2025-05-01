@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MoveSingleFile = exports.MoveSingleFileParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
 const single_source_operation_1 = require("./single-source-operation");
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 class MoveSingleFileParameter extends single_source_operation_1.SingleSourceOperationParameter {
     constructor() {
         super(...arguments);
@@ -57,7 +57,7 @@ class MoveSingleFile extends single_source_operation_1.SingleSourceOperation {
     constructor(userParams) {
         super();
         this.name = 'MoveSingleFile';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new MoveSingleFileParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new MoveSingleFileParameter());
         super.setParams(this.params);
         this.moveOptions = { overwrite: this.params.overwrite };
     }

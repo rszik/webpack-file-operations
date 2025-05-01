@@ -6,7 +6,7 @@
 import { FileUtils } from '../classes';
 
 import { GlobSourceOperation, GlobSourceOperationParameter, IGlobSourceOperationParameter } from './glob-source-operation';
-import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher';
 
 
 export interface IInsertTextToFilesParameter extends IGlobSourceOperationParameter {

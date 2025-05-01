@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MkDir = exports.MkDirParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
 const single_source_operation_1 = require("./single-source-operation");
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 class MkDirParameter extends single_source_operation_1.SingleSourceOperationParameter {
     constructor() {
         super(...arguments);
@@ -56,7 +56,7 @@ class MkDir extends single_source_operation_1.SingleSourceOperation {
     constructor(userParams) {
         super();
         this.name = 'MkDir';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new MkDirParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new MkDirParameter());
         super.setParams(this.params);
         this.params.throwErrorIfSourceDoesNotExists = false;
     }

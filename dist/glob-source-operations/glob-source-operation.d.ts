@@ -2,7 +2,7 @@
  * Copyright (c) 2022, Roland Szikora.
  * You can support this package at https://www.patreon.com/rolandszik
  */
-import { Operation, OperationParameter, IOperationParameter } from '@wecdev/webpack-hook-attacher-plugin';
+import { Operation, OperationParameter, IOperationParameter } from '@wecdev/webpack-hook-attacher';
 import { GlobOptionsWithFileTypesFalse } from 'glob';
 export interface IGlobSourceOperationParameter extends IOperationParameter {
     replaceHash?: boolean;

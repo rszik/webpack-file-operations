@@ -6,7 +6,7 @@
 import * as path from 'path';
 import * as glob from 'glob';
 
-import { ConsoleLogger, Operation, OperationParameter, IOperationParameter, Utils } from '@wecdev/webpack-hook-attacher-plugin';
+import { ConsoleLogger, Operation, OperationParameter, IOperationParameter, Utils } from '@wecdev/webpack-hook-attacher';
 
 import { FileUtils } from '../classes';
 import { GlobOptionsWithFileTypesFalse } from 'glob';

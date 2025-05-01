@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteMultipeFiles = exports.DeleteMultipeFilesParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
 const glob_source_operation_1 = require("./glob-source-operation");
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 class DeleteMultipeFilesParameter extends glob_source_operation_1.GlobSourceOperationParameter {
 }
 exports.DeleteMultipeFilesParameter = DeleteMultipeFilesParameter;
@@ -48,7 +48,7 @@ class DeleteMultipeFiles extends glob_source_operation_1.GlobSourceOperation {
     constructor(userParams) {
         super();
         this.name = 'DeleteMultipeFiles';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new DeleteMultipeFilesParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new DeleteMultipeFilesParameter());
         super.setParams(this.params);
     }
     run() {

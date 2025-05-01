@@ -40,9 +40,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GlobSourceOperation = exports.GlobSourceOperationParameter = void 0;
 const path = __importStar(require("path"));
 const glob = __importStar(require("glob"));
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 const classes_1 = require("../classes");
-class GlobSourceOperationParameter extends webpack_hook_attacher_plugin_1.OperationParameter {
+class GlobSourceOperationParameter extends webpack_hook_attacher_1.OperationParameter {
     constructor() {
         super(...arguments);
         this.replaceHash = false;
@@ -55,7 +55,7 @@ class GlobSourceOperationParameter extends webpack_hook_attacher_plugin_1.Operat
     }
 }
 exports.GlobSourceOperationParameter = GlobSourceOperationParameter;
-class GlobSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
+class GlobSourceOperation extends webpack_hook_attacher_1.Operation {
     constructor() {
         super(...arguments);
         this.sourceRoots = [];
@@ -64,7 +64,7 @@ class GlobSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
         super.setParams(params);
         this.params = params;
         this.setFullSourceGlobPatterns();
-        webpack_hook_attacher_plugin_1.ConsoleLogger.consoleDebug(`this.sourceRoots after setFullSourceGlobPatterns: ${webpack_hook_attacher_plugin_1.Utils.formattedJSONStringify(this.sourceRoots)}`);
+        webpack_hook_attacher_1.ConsoleLogger.consoleDebug(`this.sourceRoots after setFullSourceGlobPatterns: ${webpack_hook_attacher_1.Utils.formattedJSONStringify(this.sourceRoots)}`);
     }
     runGlobSourceOperation(funcionToRun, executeFuncionToRunOnSourcesFromGlobOneByOne = true) {
         super.runWrapper(this, () => {
@@ -82,18 +82,18 @@ class GlobSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
                         throw errorMessage;
                     }
                     else {
-                        webpack_hook_attacher_plugin_1.ConsoleLogger.consoleWarning(`${errorMessage}`);
+                        webpack_hook_attacher_1.ConsoleLogger.consoleWarning(`${errorMessage}`);
                     }
                 }
             }
             if (sourcesFromGlob.length === 0) {
                 let missingPathErrorText = `Could not run operation: There is no sourcesFromGlob to ${this.params.sourceRoots}`;
                 if (!this.params.hideWarningIfSourceDoesNotExists) {
-                    webpack_hook_attacher_plugin_1.ConsoleLogger.consoleWarning(missingPathErrorText);
+                    webpack_hook_attacher_1.ConsoleLogger.consoleWarning(missingPathErrorText);
                 }
             }
             else {
-                webpack_hook_attacher_plugin_1.ConsoleLogger.consoleDebug(`sourceFromGlobs: ${webpack_hook_attacher_plugin_1.Utils.formattedJSONStringify(sourcesFromGlob)}`);
+                webpack_hook_attacher_1.ConsoleLogger.consoleDebug(`sourceFromGlobs: ${webpack_hook_attacher_1.Utils.formattedJSONStringify(sourcesFromGlob)}`);
             }
             if (executeFuncionToRunOnSourcesFromGlobOneByOne) {
                 sourcesFromGlob.forEach((sourceFromGlob) => {

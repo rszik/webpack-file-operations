@@ -41,7 +41,7 @@ exports.Zip = exports.ZipParameter = void 0;
 const path = __importStar(require("path"));
 const zipper = __importStar(require("zip-local"));
 const single_source_operation_1 = require("./single-source-operation");
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 const classes_1 = require("../classes");
 class ZipParameter extends single_source_operation_1.SingleSourceOperationParameter {
     constructor() {
@@ -58,7 +58,7 @@ class Zip extends single_source_operation_1.SingleSourceOperation {
     constructor(userParams) {
         super();
         this.name = 'Zip';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new ZipParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new ZipParameter());
         super.setParams(this.params);
     }
     run() {
@@ -66,9 +66,9 @@ class Zip extends single_source_operation_1.SingleSourceOperation {
     }
     funcionToRun(sourceFolderToZip) {
         classes_1.FileUtils.ensureFolderStructureExists(path.dirname(this.params.destinationFile));
-        webpack_hook_attacher_plugin_1.ConsoleLogger.consoleDebug(`Zipping starting.`);
+        webpack_hook_attacher_1.ConsoleLogger.consoleDebug(`Zipping starting.`);
         zipper.sync.zip(sourceFolderToZip).compress().save(this.params.destinationFile);
-        webpack_hook_attacher_plugin_1.ConsoleLogger.consoleDebug('Zipping finished.');
+        webpack_hook_attacher_1.ConsoleLogger.consoleDebug('Zipping finished.');
     }
 }
 exports.Zip = Zip;

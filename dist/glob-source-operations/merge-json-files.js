@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.MergeJSONFiles = exports.MergeJSONFilesParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
 const path = __importStar(require("path"));
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 const glob_source_operation_1 = require("./glob-source-operation");
 const classes_1 = require("../classes");
 class MergeJSONFilesParameter extends glob_source_operation_1.GlobSourceOperationParameter {
@@ -57,7 +57,7 @@ class MergeJSONFiles extends glob_source_operation_1.GlobSourceOperation {
     constructor(userParams) {
         super();
         this.name = 'MergeJSONFiles';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new MergeJSONFilesParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new MergeJSONFilesParameter());
         super.setParams(this.params);
     }
     run() {
@@ -72,7 +72,7 @@ class MergeJSONFiles extends glob_source_operation_1.GlobSourceOperation {
             let objectFromRes = JSON.parse(fileContent);
             this.deepMerge(mergedObject, objectFromRes);
         });
-        fsExtra.writeFileSync(this.params.destinationFile, webpack_hook_attacher_plugin_1.Utils.formattedJSONStringify(mergedObject), { encoding: this.params.encoding });
+        fsExtra.writeFileSync(this.params.destinationFile, webpack_hook_attacher_1.Utils.formattedJSONStringify(mergedObject), { encoding: this.params.encoding });
     }
     deepMerge(target, source) {
         const isObject = (obj) => obj && typeof obj === 'object';

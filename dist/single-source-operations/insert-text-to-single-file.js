@@ -5,7 +5,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.InsertTextToSingleFile = exports.InsertTextToSingleFileParameter = void 0;
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 const classes_1 = require("../classes");
 const single_source_operation_1 = require("./single-source-operation");
 class InsertTextToSingleFileParameter extends single_source_operation_1.SingleSourceOperationParameter {
@@ -25,7 +25,7 @@ class InsertTextToSingleFile extends single_source_operation_1.SingleSourceOpera
     constructor(userParams) {
         super();
         this.name = 'InsertTextToSingleFile';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new InsertTextToSingleFileParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new InsertTextToSingleFileParameter());
         super.setParams(this.params);
     }
     run() {

@@ -6,7 +6,7 @@
 import * as path from 'path';
 import * as fsExtra from 'fs-extra';
 import { Compilation } from 'webpack';
-import { ConsoleLogger } from '@wecdev/webpack-hook-attacher-plugin';
+import { ConsoleLogger } from '@wecdev/webpack-hook-attacher';
 
 export class SplittedFile {
     public fileContentRows: string[];

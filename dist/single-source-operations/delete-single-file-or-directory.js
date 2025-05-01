@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteSingleFileOrDirectory = exports.DeleteSingleFileOrDirectoryParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
 const single_source_operation_1 = require("./single-source-operation");
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 class DeleteSingleFileOrDirectoryParameter extends single_source_operation_1.SingleSourceOperationParameter {
     constructor() {
         super(...arguments);
@@ -55,7 +55,7 @@ class DeleteSingleFileOrDirectory extends single_source_operation_1.SingleSource
     constructor(userParams) {
         super();
         this.name = 'DeleteSingleFileOrDirectory';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new DeleteSingleFileOrDirectoryParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new DeleteSingleFileOrDirectoryParameter());
         super.setParams(this.params);
     }
     run() {

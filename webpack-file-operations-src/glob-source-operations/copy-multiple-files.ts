@@ -7,7 +7,7 @@ import * as fsExtra from 'fs-extra';
 import * as path from 'path';
 
 import { GlobSourceOperation, GlobSourceOperationParameter, IGlobSourceOperationParameter } from './glob-source-operation';
-import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher';
 import { FileUtils } from '../classes';
 
 export interface ICopyMultipleFilesParameter extends IGlobSourceOperationParameter {

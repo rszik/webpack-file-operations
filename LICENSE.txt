@@ -1,2 +1,2 @@
-You can use this package for free in private and opensource projects.
-For Commertial use please contact us at roland.szikora@gmail.com
+You can use this package for free in opensource projects, school projects or as a private individual in you non-commertial project.
+If you would like to use as a business entity, please contact us at roland.szikora@gmail.com

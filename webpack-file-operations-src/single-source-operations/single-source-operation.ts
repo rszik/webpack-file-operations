@@ -6,7 +6,7 @@
 import * as glob from 'glob';
 import * as path from 'path';
 import * as fsExtra from 'fs-extra';
-import { Operation, OperationParameter, IOperationParameter, ConsoleLogger } from '@wecdev/webpack-hook-attacher-plugin';
+import { Operation, OperationParameter, IOperationParameter, ConsoleLogger } from '@wecdev/webpack-hook-attacher';
 
 import { FileUtils } from '../classes';
 

@@ -3,7 +3,7 @@
  * You can support this package at https://www.patreon.com/rolandszik
  */
 
-import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher';
 import { FileUtils } from '../classes';
 import { SingleSourceOperation, SingleSourceOperationParameter, ISingleSourceOperationParameter } from './single-source-operation';
 

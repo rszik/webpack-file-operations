@@ -39,7 +39,7 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MoveMultipleFiles = exports.MoveMultipleFilesParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 const glob_source_operation_1 = require("./glob-source-operation");
 const classes_1 = require("../classes");
 class MoveMultipleFilesParameter extends glob_source_operation_1.GlobSourceOperationParameter {
@@ -54,7 +54,7 @@ class MoveMultipleFiles extends glob_source_operation_1.GlobSourceOperation {
     constructor(userParams) {
         super();
         this.name = 'MoveSingleFile';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new MoveMultipleFilesParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new MoveMultipleFilesParameter());
         super.setParams(this.params);
         this.moveOptions = { overwrite: this.params.overwrite };
     }

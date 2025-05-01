@@ -41,7 +41,7 @@ exports.CopyMultipleFiles = exports.CopyMultipleFilesParameter = void 0;
 const fsExtra = __importStar(require("fs-extra"));
 const path = __importStar(require("path"));
 const glob_source_operation_1 = require("./glob-source-operation");
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 const classes_1 = require("../classes");
 class CopyMultipleFilesParameter extends glob_source_operation_1.GlobSourceOperationParameter {
     constructor() {
@@ -55,7 +55,7 @@ class CopyMultipleFiles extends glob_source_operation_1.GlobSourceOperation {
     constructor(userParams) {
         super();
         this.name = 'CopyMultipleFiles';
-        this.params = webpack_hook_attacher_plugin_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new CopyMultipleFilesParameter());
+        this.params = webpack_hook_attacher_1.Utils.mergeUserSettingsToDeafultSetting(userParams, new CopyMultipleFilesParameter());
         super.setParams(this.params);
     }
     run() {

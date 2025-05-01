@@ -5,7 +5,7 @@
 
 import * as fsExtra from 'fs-extra';
 import * as path from 'path';
-import { Utils } from '@wecdev/webpack-hook-attacher-plugin';
+import { Utils } from '@wecdev/webpack-hook-attacher';
 
 import { GlobSourceOperationParameter, GlobSourceOperation, IGlobSourceOperationParameter } from './glob-source-operation';
 import { FileUtils } from '../classes';

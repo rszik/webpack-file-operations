@@ -40,7 +40,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileUtils = exports.ReplaceRule = exports.IndexAndCount = exports.SplittedFile = void 0;
 const path = __importStar(require("path"));
 const fsExtra = __importStar(require("fs-extra"));
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 class SplittedFile {
 }
 exports.SplittedFile = SplittedFile;
@@ -60,7 +60,7 @@ class FileUtils {
             return filename.replace('[hash]', compilationParam.hash);
         }
         else {
-            webpack_hook_attacher_plugin_1.ConsoleLogger.consoleWarning('compilation is null in this hooktype, replaceHash will affect in hooktypes with compilation parameter');
+            webpack_hook_attacher_1.ConsoleLogger.consoleWarning('compilation is null in this hooktype, replaceHash will affect in hooktypes with compilation parameter');
             return filename;
         }
     }

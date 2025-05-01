@@ -41,9 +41,9 @@ exports.SingleSourceOperation = exports.SingleSourceOperationParameter = void 0;
 const glob = __importStar(require("glob"));
 const path = __importStar(require("path"));
 const fsExtra = __importStar(require("fs-extra"));
-const webpack_hook_attacher_plugin_1 = require("@wecdev/webpack-hook-attacher-plugin");
+const webpack_hook_attacher_1 = require("@wecdev/webpack-hook-attacher");
 const classes_1 = require("../classes");
-class SingleSourceOperationParameter extends webpack_hook_attacher_plugin_1.OperationParameter {
+class SingleSourceOperationParameter extends webpack_hook_attacher_1.OperationParameter {
     constructor() {
         super(...arguments);
         this.replaceHash = false;
@@ -51,7 +51,7 @@ class SingleSourceOperationParameter extends webpack_hook_attacher_plugin_1.Oper
     }
 }
 exports.SingleSourceOperationParameter = SingleSourceOperationParameter;
-class SingleSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
+class SingleSourceOperation extends webpack_hook_attacher_1.Operation {
     setParams(params) {
         super.setParams(params);
         this.params = params;
@@ -87,7 +87,7 @@ class SingleSourceOperation extends webpack_hook_attacher_plugin_1.Operation {
     checkCantBeGlobPattern(singleSource) {
         if (glob.hasMagic(singleSource)) {
             let errorText = `${this.name} - Source '${this.params.getSingleSource()}' can't be glob pattern`;
-            webpack_hook_attacher_plugin_1.ConsoleLogger.consoleError(errorText);
+            webpack_hook_attacher_1.ConsoleLogger.consoleError(errorText);
             throw errorText;
         }
     }
