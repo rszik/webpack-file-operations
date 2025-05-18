@@ -1,7 +1,7 @@
 {
     "name": "@wecdev/webpack-file-operations",
     "description": "File and directory operation collection for webpack build. You can attach any of these operations (delete, create, modify, merge json, etc...) to any webpack hook with webpack-hook-attacher",
-    "version": "5.99.7",
+    "version": "5.99.8",
     "author": {
         "name": "Roland Szikora",
         "email": "roland.szikora@gmail.com",
@@ -41,8 +41,8 @@
         "fs-extra": "11.3.0",
         "glob": "11.0.2",
         "zip-local": "0.3.5",
-        "@wecdev/webpack-hook-attacher": "5.99.7",
-        "webpack": "5.99.7"
+        "@wecdev/webpack-hook-attacher": "5.99.8",
+        "webpack": "5.99.8"
     },
     "devDependencies": {
         "@types/node": "22.15.3",
